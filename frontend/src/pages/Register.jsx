@@ -1,6 +1,6 @@
 
-import React, { useState } from 'react'
 import axios from 'axios'
+import { useState } from 'react'
 
 export default function Register() {
   const [name, setName] = useState('')
@@ -8,7 +8,7 @@ export default function Register() {
   const [password, setPassword] = useState('')
 
   const handleRegister = async () => {
-    await axios.post(`${import.meta.env.VITE_BACKEND_URL}/register`, {
+    await axios.post(`/api/register`, {
       name, email, password
     })
     alert('Registered successfully')
